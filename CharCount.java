@@ -27,14 +27,22 @@ public class CharCount {
     }
 
     // helper method
-    public static int count(char[] chars, char ch, int high) {
+    private static int count(char[] chars, char ch, int high) {
         if (high >= chars.length) {
+            
+            // end of string
             return 0;
+
         } else if (chars[high] == ch) {
-            return count(chars, ch, high + 1) + 1; 
-        }
-        else {
+            
+            // char matches
+            return count(chars, ch, high + 1) + 1;
+
+        } else {
+
+            // no match
             return count(chars, ch, high + 1);
+        
         }
     }
 }
